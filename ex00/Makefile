@@ -28,7 +28,7 @@ $(NAME): $(OBJ)
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@echo "\033[32m cleaning up... \033[0m"
+	@echo "\033[34m cleaning up... \033[0m"
 	rm -f $(OBJ)
 
 fclean: clean
