@@ -10,11 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include <iostream> //
+
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 int main()
 {
-	std::cout << "AMSEL" << std::endl;
+	std::string	input;
+	PhoneBook	Book;
+	auto		it = Book.Contacts.begin();
+	int			i = 0;
+
+	while(true)
+	{
+		std::cout << "Enter command:" << std::endl;
+		std::getline(std::cin, input);
+		if (input == "EXIT")	//free something?
+			exit (0);
+		else if (input == "ADD")
+		{
+			if (i < 8)
+			{
+				std::advance(it, i);
+				create_contact(*it);
+				i++;
+			}
+		}
+		// else if (input == "SEARCH")
+		// 	search_contact();
+		else
+			std::cout << "Not a valid command!" << std::endl;
+	}
 
 	return (0);
 }
