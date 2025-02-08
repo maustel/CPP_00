@@ -26,9 +26,9 @@ class Contact
 
 	public:
 	Contact();
-	void	create_contact();
-	std::string	set_value(const std::string value);
-	void GetInfo();
+	void	CreateContact();
+	std::string	SetValue(const std::string value);
+	std::string GetValue(std::string attr);
 	// Contact(std::string firstname, std::string lastname, std::string nickname, int phonenumber, std::string darkestsecret)
 	// {
 	// 	FirstName = firstname;

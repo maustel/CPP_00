@@ -14,6 +14,8 @@
 # define __PHONEBOOK_HPP__
 
 #include <iostream>
+#include <iomanip>
+#include <array>
 // #include <list>
 
 #include "Contact.hpp"
@@ -21,12 +23,15 @@
 class PhoneBook
 {
 	private:
-	Contact	ContactList[8];
+	std::array<Contact, 8> ContactList;
+	// Contact	ContactList[8];
 	int		i;
+	int		nbr_contacts;
 
 	public:
 	PhoneBook();
 	void	AddContact();
+	void	Display();
 
 };
 

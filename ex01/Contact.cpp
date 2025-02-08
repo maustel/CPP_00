@@ -19,16 +19,23 @@ Contact::Contact() : FirstName(""),
 		DarkestSecret("")
 {}
 
-void Contact::GetInfo()
+std::string Contact::GetValue(std::string attr)
 {
-	std::cout << "First Name: " << FirstName << std::endl;
-	std::cout << "Last Name: " << LastName << std::endl;
-	std::cout << "Nickname: " << NickName << std::endl;
-	std::cout << "Phone Number: " << PhoneNumber << std::endl;
-	std::cout << "Darkest Secret: " << DarkestSecret << std::endl;
+	if (attr == "FirstName")
+		return (FirstName);
+	if (attr == "LastName")
+		return (LastName);
+	if (attr == "NickName")
+		return (NickName);
+	if (attr == "PhoneNumber")
+		return (PhoneNumber);
+	if (attr == "DarkestSecret")
+		return (DarkestSecret);
+	else
+		return (NULL);
 }
 
-std::string	Contact::set_value(const std::string prompt)
+std::string	Contact::SetValue(const std::string prompt)
 {
 	std::string	value;
 
@@ -46,13 +53,13 @@ std::string	Contact::set_value(const std::string prompt)
 	return (value);
 }
 
-void	Contact::create_contact()
+void	Contact::CreateContact()
 {
 	std::cout << "Saving a new contact." << std::endl;
 
-	FirstName = set_value("first name: ");
-	LastName = set_value("last name: ");
-	NickName = set_value("nickname: ");
-	PhoneNumber = set_value("phone number: ");
-	DarkestSecret = set_value("darkest secret: ");
+	FirstName = SetValue("first name: ");
+	LastName = SetValue("last name: ");
+	NickName = SetValue("nickname: ");
+	PhoneNumber = SetValue("phone number: ");
+	DarkestSecret = SetValue("darkest secret: ");
 }
