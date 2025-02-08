@@ -20,6 +20,7 @@ int main()
 	std::string	input;
 	PhoneBook	Book;
 
+
 	while(true)
 	{
 		std::cout << "Enter command:" << std::endl;
@@ -29,20 +30,12 @@ int main()
 			exit (0);
 		else if (input == "ADD")
 			Book.AddContact();
-		// else if (input == "ADD")
-		// {
-		// 	one.create_contact();
-			// if (i < 8)
-			// {
-			// 	std::advance(it, i);
-			// 	create_contact(*it);
-			// 	i++;
-			// }
-		// }
+
 		// else if (input == "SEARCH")
 		// 	search_contact();
 		// else
 		// 	std::cout << "Not a valid command!" << std::endl;
+		// std::cin.ignore();
 	}
 
 	return (0);

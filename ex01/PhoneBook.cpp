@@ -24,7 +24,10 @@ void	PhoneBook::AddContact()
 
 	newCont.create_contact();
 	ContactList[i] = newCont;
-	ContactList[i].GetInfo();
+	std::cout << "\nFirst Contact:\n" << std::endl;
+	ContactList[0].GetInfo();
+	std::cout << "\nSecond Contact:\n" << std::endl;
+	ContactList[1].GetInfo();
 	i++;
 
 }

@@ -21,12 +21,13 @@ class Contact
 	std::string	FirstName;
 	std::string	LastName;
 	std::string	NickName;
-	long		PhoneNumber;
+	std::string	PhoneNumber;
 	std::string	DarkestSecret;
 
 	public:
 	Contact();
 	void	create_contact();
+	std::string	set_value(const std::string value);
 	void GetInfo();
 	// Contact(std::string firstname, std::string lastname, std::string nickname, int phonenumber, std::string darkestsecret)
 	// {
