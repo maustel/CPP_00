@@ -14,6 +14,7 @@ NAME = phone
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++11
+# FLAGS = -std=c++11
 
 SRCS = main.cpp\
 		Contact.cpp\

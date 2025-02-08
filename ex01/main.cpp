@@ -19,28 +19,30 @@ int main()
 {
 	std::string	input;
 	PhoneBook	Book;
-	auto		it = Book.Contacts.begin();
-	int			i = 0;
 
 	while(true)
 	{
 		std::cout << "Enter command:" << std::endl;
 		std::getline(std::cin, input);
+
 		if (input == "EXIT")	//free something?
 			exit (0);
 		else if (input == "ADD")
-		{
-			if (i < 8)
-			{
-				std::advance(it, i);
-				create_contact(*it);
-				i++;
-			}
-		}
+			Book.AddContact();
+		// else if (input == "ADD")
+		// {
+		// 	one.create_contact();
+			// if (i < 8)
+			// {
+			// 	std::advance(it, i);
+			// 	create_contact(*it);
+			// 	i++;
+			// }
+		// }
 		// else if (input == "SEARCH")
 		// 	search_contact();
-		else
-			std::cout << "Not a valid command!" << std::endl;
+		// else
+		// 	std::cout << "Not a valid command!" << std::endl;
 	}
 
 	return (0);

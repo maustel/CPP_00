@@ -17,32 +17,26 @@
 
 class Contact
 {
-	public:
+	private:
 	std::string	FirstName;
 	std::string	LastName;
 	std::string	NickName;
 	long		PhoneNumber;
 	std::string	DarkestSecret;
 
-	Contact(std::string firstname, std::string lastname, std::string nickname, int phonenumber, std::string darkestsecret)
-	{
-		FirstName = firstname;
-		LastName = lastname;
-		NickName = nickname;
-		PhoneNumber = phonenumber;
-		DarkestSecret = darkestsecret;
-	}
-
-	void GetInfo()
-	{
-		std::cout << "First Name: " << FirstName << std::endl;
-		std::cout << "Last Name: " << LastName << std::endl;
-		std::cout << "Nickname: " << NickName << std::endl;
-		std::cout << "Phone Number: " << PhoneNumber << std::endl;
-		std::cout << "Darkest Secret: " << DarkestSecret << std::endl;
-	}
+	public:
+	Contact();
+	void	create_contact();
+	void GetInfo();
+	// Contact(std::string firstname, std::string lastname, std::string nickname, int phonenumber, std::string darkestsecret)
+	// {
+	// 	FirstName = firstname;
+	// 	LastName = lastname;
+	// 	NickName = nickname;
+	// 	PhoneNumber = phonenumber;
+	// 	DarkestSecret = darkestsecret;
+	// }
 };
 
-// void	create_contact(void);
 
 #endif

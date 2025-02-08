@@ -14,18 +14,23 @@
 # define __PHONEBOOK_HPP__
 
 #include <iostream>
-#include <list>
+// #include <list>
 
 #include "Contact.hpp"
 
 class PhoneBook
 {
+	private:
+	Contact	ContactList[8];
+	int		i;
+
 	public:
-	PhoneBook() = default;
-	std::list<Contact> Contacts;
+	PhoneBook();
+	void	AddContact();
+
 };
 
 
-void	create_contact(Contact& contact);
+// void	create_contact(Contact& contact);
 
 #endif
