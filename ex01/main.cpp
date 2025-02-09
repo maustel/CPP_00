@@ -31,7 +31,10 @@ int main()
 			Book.AddContact();
 
 		else if (input == "SEARCH")
-			Book.Display();
+		{
+			Book.DisplayContactList();
+			Book.DisplayIndexContact();
+		}
 		// 	search_contact();
 		// else
 		// 	std::cout << "Not a valid command!" << std::endl;

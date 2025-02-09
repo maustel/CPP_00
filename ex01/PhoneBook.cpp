@@ -18,6 +18,39 @@ PhoneBook::PhoneBook() : i(0), nbr_contacts(0) {
 	}
 }
 
+void	PhoneBook::DisplayIndexContact()
+{
+	int	index;
+	std::string input;
+
+	if (nbr_contacts == 0)
+	{
+		std::cout << "No index to chose!" << std::endl;
+		return ;
+	}
+	std::cout << "Chose index of contact you want to see: ";
+	std::getline(std::cin, input);
+	if (input == "0")
+		index = 0;
+	else
+	{
+		index = atoi(input.c_str());
+		if (index <= 0 || index > nbr_contacts)
+		{
+			std::cout << "Index is out of range or wrong! Return." << std::endl;
+			return ;
+		}
+	}
+	if (index >= 0 && index <= nbr_contacts)
+	{
+		std::cout << ContactList[index].GetValue("FirstName") << std::endl;
+		std::cout << ContactList[index].GetValue("LastName") << std::endl;
+		std::cout << ContactList[index].GetValue("NickName") << std::endl;
+		std::cout << ContactList[index].GetValue("PhoneNumber") << std::endl;
+		std::cout << ContactList[index].GetValue("DarkestSecret") << std::endl;
+	}
+}
+
 /*-------------------------------------------------------------------------
 Print line for Display
 Truncate words that are longer than 10 characters and add '.'
@@ -35,7 +68,7 @@ std::right -> right aligned
 std::setfill(' ') << std::setw(10) -> each columns 10 characters. if word
 sherter than 10, column will be filled with whitespaces
 -------------------------------------------------------------------------*/
-void	PhoneBook::Display()
+void	PhoneBook::DisplayContactList()
 {
 	int	j = 0;
 	std::string name;

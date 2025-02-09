@@ -31,8 +31,8 @@ class PhoneBook
 	public:
 	PhoneBook();
 	void	AddContact();
-	void	Display();
-
+	void	DisplayContactList();
+	void	DisplayIndexContact();
 };
 
 #endif
