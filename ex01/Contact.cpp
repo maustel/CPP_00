@@ -19,6 +19,9 @@ Contact::Contact() : FirstName(""),
 		DarkestSecret("")
 {}
 
+/*-------------------------------------------------------------------------
+Get Value of contact-object
+-------------------------------------------------------------------------*/
 std::string Contact::GetValue(std::string attr)
 {
 	if (attr == "FirstName")
@@ -35,6 +38,9 @@ std::string Contact::GetValue(std::string attr)
 		return (NULL);
 }
 
+/*-------------------------------------------------------------------------
+Ask user to insert values that will be written to object-values
+-------------------------------------------------------------------------*/
 std::string	Contact::SetValue(const std::string prompt)
 {
 	std::string	value;
@@ -53,6 +59,9 @@ std::string	Contact::SetValue(const std::string prompt)
 	return (value);
 }
 
+/*-------------------------------------------------------------------------
+Write values to attributes of new contact-object
+-------------------------------------------------------------------------*/
 void	Contact::CreateContact()
 {
 	std::cout << "Saving a new contact." << std::endl;

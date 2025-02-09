@@ -18,6 +18,10 @@ PhoneBook::PhoneBook() : i(0), nbr_contacts(0) {
 	}
 }
 
+/*-------------------------------------------------------------------------
+Print line for Display
+Truncate words that are longer than 10 characters and add '.'
+-------------------------------------------------------------------------*/
 void	PrintLine(std::string str)
 {
 	if (str.size() > 10)
@@ -25,6 +29,12 @@ void	PrintLine(std::string str)
 	std::cout << std::right << std::setfill(' ') << std::setw(10) << str << "|";
 }
 
+/*-------------------------------------------------------------------------
+Display all contacts as specified in subject
+std::right -> right aligned
+std::setfill(' ') << std::setw(10) -> each columns 10 characters. if word
+sherter than 10, column will be filled with whitespaces
+-------------------------------------------------------------------------*/
 void	PhoneBook::Display()
 {
 	int	j = 0;
@@ -47,6 +57,11 @@ void	PhoneBook::Display()
 	}
 }
 
+/*-------------------------------------------------------------------------
+Create Contact and add it at the end of the contact list
+If we already have 8 contacts, safe the contact in the fist place
+and override old one
+-------------------------------------------------------------------------*/
 void	PhoneBook::AddContact()
 {
 	Contact	newCont;

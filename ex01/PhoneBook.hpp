@@ -35,7 +35,4 @@ class PhoneBook
 
 };
 
-
-// void	create_contact(Contact& contact);
-
 #endif
