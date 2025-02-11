@@ -17,7 +17,6 @@
 #include <array>
 #include <string>
 #include <cstdlib>
-
 #include <iostream>
 
 class Contact

@@ -1,5 +1,6 @@
 ex01:
 add comments to be sure to understand code later:
-- change Contact attributes into one array(?) so i can iterate through it
-- add choice for printing whole entry
+
+- watch last intra video about pointers
+
 
