@@ -10,35 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream> //
-
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
 int main()
 {
 	std::string	input;
-	PhoneBook	Book;
+	PhoneBook	phonebook;
 
 	while(true)
 	{
 		std::cout << "Enter command:" << std::endl;
-		std::getline(std::cin, input);
-
-		if (input == "EXIT")	//free something? Destructor?
+		getline(std::cin, input);
+		if (std::cin.fail()) {
+			std::cerr << "\e[0;31m" << "Error: std::cin" << std::endl;
+			return (1);
+		}
+		if (input == "EXIT")
+		{
+			std::cout << "\e[0;32m" << "exiting" << "\e[0;37m" << std::endl;
 			return (0);
+		}
 		else if (input == "ADD")
-			Book.AddContact();
-
+			phonebook.AddContact();
 		else if (input == "SEARCH")
 		{
-			Book.DisplayContactList();
-			Book.DisplayIndexContact();
+			phonebook.DisplayContactList();
+			phonebook.DisplayIndexContact();
 		}
-		// 	search_contact();
-		// else
-		// 	std::cout << "Not a valid command!" << std::endl;
-		// std::cin.ignore();
+		else
+			std::cout << "\e[0;31m" << input << " is not a valid command!" << "\e[0;37m" << std::endl;
 	}
 
 	return (0);

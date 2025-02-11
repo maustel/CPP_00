@@ -13,10 +13,10 @@
 #ifndef __PHONEBOOK_HPP__
 # define __PHONEBOOK_HPP__
 
-#include <iostream>
 #include <iomanip>
 #include <array>
-// #include <list>
+#include <string>
+#include <cstdlib>
 
 #include "Contact.hpp"
 
@@ -24,12 +24,12 @@ class PhoneBook
 {
 	private:
 	std::array<Contact, 8> ContactList;
-	// Contact	ContactList[8];
 	int		i;
 	int		nbr_contacts;
 
 	public:
 	PhoneBook();
+	~PhoneBook();
 	void	AddContact();
 	void	DisplayContactList();
 	void	DisplayIndexContact();

@@ -13,7 +13,7 @@
 NAME = phone
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++11
+FLAGS = -Wall -Wextra -Werror -std=c++17
 # FLAGS = -std=c++11
 
 SRCS = main.cpp\

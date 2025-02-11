@@ -19,10 +19,13 @@ Contact::Contact() : FirstName(""),
 		DarkestSecret("")
 {}
 
+Contact::~Contact()
+{}
+
 /*-------------------------------------------------------------------------
 Get Value of contact-object
 -------------------------------------------------------------------------*/
-std::string Contact::GetValue(std::string attr)
+std::string Contact::GetValue(std::string attr) const
 {
 	if (attr == "FirstName")
 		return (FirstName);
@@ -46,15 +49,19 @@ std::string	Contact::SetValue(const std::string prompt)
 	std::string	value;
 
 	std::cout << "Enter " << prompt;
-	std::getline(std::cin, value);
+	getline(std::cin, value);
 	if (std::cin.fail()) {
-		std::cerr << "Error: std::cin" << std::endl;
-		exit(1);
+		std::cerr << "\e[0;31m" << "Error: std::cin" << std::endl;
+		exit (1);
 	}
 	while (value.empty())
 	{
-		std::cout << "Empty fields are not allowed! Retry:" << std::endl;
-		std::getline(std::cin, value);
+		std::cout << "\e[0;31m" << "Empty fields are not allowed! Retry:" << "\e[0;37m" << std::endl;
+		getline(std::cin, value);
+		if (std::cin.fail()) {
+		std::cerr << "\e[0;31m" << "Error: std::cin" << std::endl;
+		exit (1);
+		}
 	}
 	return (value);
 }
@@ -64,11 +71,12 @@ Write values to attributes of new contact-object
 -------------------------------------------------------------------------*/
 void	Contact::CreateContact()
 {
-	std::cout << "Saving a new contact." << std::endl;
+	std::cout << "\e[0;34m" << "Saving a new contact." << "\e[0;37m" << std::endl;
 
 	FirstName = SetValue("first name: ");
 	LastName = SetValue("last name: ");
 	NickName = SetValue("nickname: ");
 	PhoneNumber = SetValue("phone number: ");
 	DarkestSecret = SetValue("darkest secret: ");
+	std::cout << "\e[0;32m" << "Created new contact: " << FirstName << "\e[0;37m" << std::endl;
 }

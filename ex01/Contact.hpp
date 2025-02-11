@@ -13,6 +13,11 @@
 #ifndef __Contact_HPP__
 # define __Contact_HPP__
 
+#include <iomanip>
+#include <array>
+#include <string>
+#include <cstdlib>
+
 #include <iostream>
 
 class Contact
@@ -24,11 +29,13 @@ class Contact
 	std::string	PhoneNumber;
 	std::string	DarkestSecret;
 
+	std::string	SetValue(const std::string value);
+
 	public:
 	Contact();
+	~Contact();
 	void		CreateContact();
-	std::string	SetValue(const std::string value);
-	std::string GetValue(std::string attr);
+	std::string GetValue(std::string attr) const;
 };
 
 

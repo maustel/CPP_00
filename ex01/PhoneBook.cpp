@@ -12,12 +12,24 @@
 
 #include "PhoneBook.hpp"
 
+/*-------------------------------------------------------------------------
+Constructor
+for each contact of contactlist call Constructor of class Contact
+-------------------------------------------------------------------------*/
 PhoneBook::PhoneBook() : i(0), nbr_contacts(0) {
 	for (int index = 0; index < 8; index++) {
 		ContactList[index] = Contact();
 	}
 }
 
+PhoneBook::~PhoneBook()
+{}
+
+/*-------------------------------------------------------------------------
+Ask user to choose index of contact
+if wrong input, return.
+display the contact information, one field per line
+-------------------------------------------------------------------------*/
 void	PhoneBook::DisplayIndexContact()
 {
 	int	index;
@@ -25,19 +37,24 @@ void	PhoneBook::DisplayIndexContact()
 
 	if (nbr_contacts == 0)
 	{
-		std::cout << "No index to chose!" << std::endl;
+		std::cout << "\e[0;31m" << "No index to choose!" << "\e[0;37m" << std::endl;
 		return ;
 	}
-	std::cout << "Chose index of contact you want to see: ";
-	std::getline(std::cin, input);
+	std::cout << "\e[0;34m" << "Choose index of contact you want to see: " << "\e[0;37m";
+
+	getline(std::cin, input);
+	if (std::cin.fail()) {
+		std::cerr << "\e[0;31m" << "Error: std::cin" << std::endl;
+		exit (1) ;
+	}
 	if (input == "0")
 		index = 0;
 	else
 	{
 		index = atoi(input.c_str());
-		if (index <= 0 || index > nbr_contacts)
+		if (index <= 0 || index >= nbr_contacts)
 		{
-			std::cout << "Index is out of range or wrong! Return." << std::endl;
+			std::cout << "\e[0;31m" << "Index is out of range or wrong! Return." << "\e[0;37m" << std::endl;
 			return ;
 		}
 	}
