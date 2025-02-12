@@ -18,7 +18,7 @@
 class PhoneBook
 {
 	private:
-	std::array<Contact, 8> ContactList;
+	Contact	ContactList[8];
 	int		i;
 	int		nbr_contacts;
 
