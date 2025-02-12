@@ -13,11 +13,11 @@
 #ifndef __Contact_HPP__
 # define __Contact_HPP__
 
-#include <iomanip>
-#include <array>
-#include <string>
-#include <cstdlib>
-#include <iostream>
+# include <iomanip>
+# include <array>
+# include <string>
+# include <cstdlib>
+# include <iostream>
 
 class Contact
 {

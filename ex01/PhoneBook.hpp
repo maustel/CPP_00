@@ -13,13 +13,13 @@
 #ifndef __PHONEBOOK_HPP__
 # define __PHONEBOOK_HPP__
 
-#include <iomanip>
-#include <array>
-#include <string>
-#include <cstdlib>
-#include <iostream>
+# include <iomanip>
+# include <array>
+# include <string>
+# include <cstdlib>
+# include <iostream>
 
-#include "Contact.hpp"
+# include "Contact.hpp"
 
 class PhoneBook
 {
