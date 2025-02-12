@@ -35,7 +35,7 @@ void	PhoneBook::DisplayIndexContact()
 	int	index;
 	std::string input;
 
-	if (nbr_contacts == 0)
+	if (this->nbr_contacts == 0)
 	{
 		std::cout << "\e[0;31m" << "No index to choose!" << "\e[0;37m" << std::endl;
 		return ;
@@ -52,19 +52,19 @@ void	PhoneBook::DisplayIndexContact()
 	else
 	{
 		index = atoi(input.c_str());
-		if (index <= 0 || index >= nbr_contacts)
+		if (index <= 0 || index >= this->nbr_contacts)
 		{
 			std::cout << "\e[0;31m" << "Index is out of range or wrong! Return." << "\e[0;37m" << std::endl;
 			return ;
 		}
 	}
-	if (index >= 0 && index <= nbr_contacts)
+	if (index >= 0 && index <= this->nbr_contacts)
 	{
-		std::cout << ContactList[index].GetValue("FirstName") << std::endl;
-		std::cout << ContactList[index].GetValue("LastName") << std::endl;
-		std::cout << ContactList[index].GetValue("NickName") << std::endl;
-		std::cout << ContactList[index].GetValue("PhoneNumber") << std::endl;
-		std::cout << ContactList[index].GetValue("DarkestSecret") << std::endl;
+		std::cout << this->ContactList[index].GetValue("FirstName") << std::endl;
+		std::cout << this->ContactList[index].GetValue("LastName") << std::endl;
+		std::cout << this->ContactList[index].GetValue("NickName") << std::endl;
+		std::cout << this->ContactList[index].GetValue("PhoneNumber") << std::endl;
+		std::cout << this->ContactList[index].GetValue("DarkestSecret") << std::endl;
 	}
 }
 
@@ -96,12 +96,12 @@ void	PhoneBook::DisplayContactList()
 	PrintLine("nickname");
 	std::cout << std::endl;
 
-	while (j < nbr_contacts)
+	while (j < this->nbr_contacts)
 	{
 		std::cout << std::right << std::setfill(' ') << std::setw(10) << j << "|";
-		PrintLine(ContactList[j].GetValue("FirstName"));
-		PrintLine(ContactList[j].GetValue("LastName"));
-		PrintLine(ContactList[j].GetValue("NickName"));
+		PrintLine(this->ContactList[j].GetValue("FirstName"));
+		PrintLine(this->ContactList[j].GetValue("LastName"));
+		PrintLine(this->ContactList[j].GetValue("NickName"));
 		std::cout << std::endl;
 		j++;
 	}
@@ -117,10 +117,10 @@ void	PhoneBook::AddContact()
 	Contact	newCont;
 
 	newCont.CreateContact();
-	if (i == 8)
-		i = 0;
-	ContactList[i] = newCont;
+	if (this->i == 8)
+		this->i = 0;
+	this->ContactList[i] = newCont;
 	i++;
-	if (nbr_contacts < 8)
-		nbr_contacts++;
+	if (this->nbr_contacts < 8)
+		this->nbr_contacts++;
 }

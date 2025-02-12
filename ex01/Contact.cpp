@@ -28,15 +28,15 @@ Get Value of contact-object
 std::string Contact::GetValue(std::string attr) const
 {
 	if (attr == "FirstName")
-		return (FirstName);
+		return (this->FirstName);
 	if (attr == "LastName")
-		return (LastName);
+		return (this->LastName);
 	if (attr == "NickName")
-		return (NickName);
+		return (this->NickName);
 	if (attr == "PhoneNumber")
-		return (PhoneNumber);
+		return (this->PhoneNumber);
 	if (attr == "DarkestSecret")
-		return (DarkestSecret);
+		return (this->DarkestSecret);
 	else
 		return (NULL);
 }
@@ -73,10 +73,10 @@ void	Contact::CreateContact()
 {
 	std::cout << "\e[0;34m" << "Saving a new contact." << "\e[0;37m" << std::endl;
 
-	FirstName = SetValue("first name: ");
-	LastName = SetValue("last name: ");
-	NickName = SetValue("nickname: ");
-	PhoneNumber = SetValue("phone number: ");
-	DarkestSecret = SetValue("darkest secret: ");
-	std::cout << "\e[0;32m" << "Created new contact: " << FirstName << "\e[0;37m" << std::endl;
+	this->FirstName = SetValue("first name: ");
+	this->LastName = SetValue("last name: ");
+	this->NickName = SetValue("nickname: ");
+	this->PhoneNumber = SetValue("phone number: ");
+	this->DarkestSecret = SetValue("darkest secret: ");
+	std::cout << "\e[0;32m" << "Created new contact: " << this->FirstName << "\e[0;37m" << std::endl;
 }
