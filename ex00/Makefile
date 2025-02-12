@@ -48,7 +48,7 @@ PHONY: all, clean, fclean, re
 # 2. Find the source: %.cpp matches main.cpp
 # 3. Run the command with:
 #    $< = main.cpp
-#    $@ = main.o	->redundant because %.o: %.cpp declares already the o-name
+#    $@ = main.o	call output file "main.o" ->redundant because %.o: %.cpp declares already the o-name
 # Result: c++ $(CFLAGS) -c main.cpp -o main.o
 # The -c flag is particularly useful because it:
 #     Allows you to compile files independently
